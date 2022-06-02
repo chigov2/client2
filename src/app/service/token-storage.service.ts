@@ -19,9 +19,20 @@ export class TokenStorageService {
     return <string>sessionStorage.getItem(TOKEN_KEY);
   }
 
-  public saveUser(user): void{
+  public saveUser(user: any): void{
     window.sessionStorage.removeItem(TOKEN_KEY);
+    window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
     //удалить то, что біло и задать новое значение
+  }
+
+  public getUser(): any {
+    return JSON.parse(<string>sessionStorage.getItem(USER_KEY));
+  }
+
+  public logOut(): void {
+    window.sessionStorage.clear();
+    window.location.reload();
+
   }
 
 }
