@@ -17,7 +17,7 @@ export class UserService {
     return this.http.get(USER_API + id);
   }
 
-  //возврат текущего пользователя
+  //возврат текущего пользователя ok
   getCurrentUser(): Observable<any> {
     return this.http.get(USER_API);
   }

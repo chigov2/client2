@@ -24,7 +24,7 @@ export class PostService {
     return this.http.get(POST_API + "user/posts");
   }
 
-  //удалить - передавать ничего не надо - null
+  //удалить - передавать ничего не надо - null null
   deletePost(id: number): Observable<any>{
     return this.http.post(POST_API + id + 'delete',null);
   }
